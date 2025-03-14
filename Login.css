@@ -1,0 +1,203 @@
+/* 🌌 Aurora Borealis Animated Background */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #360033, #0b8793, #ff0080, #0b8793);
+  background-size: 300% 300%;
+  animation: aurora 8s infinite alternate ease-in-out;
+  overflow: hidden;
+}
+
+/* 🟣 Floating Orbs */
+.orb {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  animation: floatOrb 6s infinite alternate ease-in-out;
+}
+
+.orb:nth-child(1) {
+  top: 15%;
+  left: 15%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 8s;
+}
+
+.orb:nth-child(2) {
+  bottom: 15%;
+  right: 20%;
+  width: 120px;
+  height: 120px;
+  animation-duration: 10s;
+}
+
+@keyframes floatOrb {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* 🔳 Glassmorphism Login Box */
+.login-box {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* ✨ Shine Animation for Text */
+@keyframes textShine {
+  from {
+    background-position: -200px 0;
+  }
+  to {
+    background-position: 200px 0;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #ff8c00, #ff0080, #ff8c00);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 3s linear infinite;
+}
+
+/* 🎨 Glass Input Fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 🎨 Morphing Gradient Buttons */
+button {
+  background: linear-gradient(45deg, #2f59ff, #95bfff);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🎭 Button Color Morph on Hover */
+button:hover {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(98, 0, 234, 0.5);
+}
+
+/* 🌊 Button Wave Animation */
+button::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 🔄 Switch Button */
+.switch-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-top: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ff8c00;
+  color: #ff8c00;
+}
+
+/* 🚪 Logout Button */
+.logout-btn {
+  background: linear-gradient(45deg, #2c5364, #0f2027);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(45deg, #1e3c72, #1e3c72);
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 600px) {
+  .login-box {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 10px;
+    width: 100%;
+  }
+}
